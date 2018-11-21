@@ -1,0 +1,22 @@
+{
+  "name": "cloudflare-graphql",
+  "version": "0.0.1",
+  "description": "Cloudflare Workers + KV + GraphQL",
+  "main": "./src/hellowStuff/index.js",
+  "author": "Jon Patell",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo did you mean to run serverless deploy? :D"
+  },
+  "dependencies": {
+    "form-data": "^2.3.3",
+    "graphql": "^14.0.2"
+  },
+  "devDependencies": {
+    "serverless-cloudflare-workers": "APIOpoly/serverless-cloudflare-workers",
+    "serverless-webpack": "^5.2.0",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.26.0",
+    "webpack-cli": "^3.1.2"
+  }
+}

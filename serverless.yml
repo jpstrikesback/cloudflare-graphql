@@ -1,0 +1,38 @@
+# serverless.yml
+service:
+  name: hello-stuff
+  custom:
+    webpack:
+      webpackConfig: 'webpack.config.js' # Name of webpack configuration file
+      includeModules: true # Node modules configuration for packaging
+      packager: 'yarn' # Packager that will be used to package your external modules
+
+provider:
+  name: cloudflare
+  config:
+    accountId: ${env:CLOUDFLARE_ACCOUNT_ID}
+    zoneId: ${env:CLOUDFLARE_ZONE_ID}
+    namespaceId: ${env:CLOUDFLARE_NAMESPACE_ID}
+    workers:
+      hello:
+        routes:
+          - example.com/graphql
+
+plugins:
+  - serverless-webpack
+  - serverless-cloudflare-workers
+
+functions:
+  helloStuff:
+    handler: src/helloStuff/index.server
+    # What the script will be called on Cloudflare
+    worker: hello
+    # The name of the script on your machine, omitting the .js file extension
+    script: src/helloStuff/index
+    # Events are only relevant to the `serverless invoke` command and don’t affect deployment in any way
+    events:
+      - http:
+          url: example.com/graphql
+          method: POST
+          headers:
+            someKey: someValue
