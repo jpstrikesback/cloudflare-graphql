@@ -1,7 +1,7 @@
 # CloudFlare + Workers KV + GraphQL
 ### Because we can.
 
-This is a *very* simple GraphQL API built on top of Cloudflare Works KV.
+This is a *very* simple GraphQL API built on top of Cloudflare Workers KV.
 
 You may query and mutate items in a single Workers KV namespace by sending application/graphql format POST requests.
 
