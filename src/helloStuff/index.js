@@ -9,7 +9,7 @@ addEventListener("fetch", event => {
 // "mutation: { stuffIt(id: "1", blob:"this is the right stuff") { id blob } }"
 var schema = buildSchema(`
   type Stuff {
-    id: String!,
+    id: String!
     blob: String
   }
 
