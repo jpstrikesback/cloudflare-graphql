@@ -2,7 +2,7 @@
   "name": "cloudflare-graphql",
   "version": "0.0.1",
   "description": "Cloudflare Workers + KV + GraphQL",
-  "main": "./src/hellowStuff/index.js",
+  "main": "./src/helloStuff/index.js",
   "author": "Jon Patell",
   "license": "MIT",
   "scripts": {
